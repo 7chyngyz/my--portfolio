@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav__link {
+    @apply relative text-base font-medium w-fit block after:block after:content-[''] after:absolute
+     after:h-[3px] after:bg-gray-400 text-white after:w-full after:scale-x-0
+      after:hover:scale-x-100 after:transition after:duration-300 after:origin-right;
+  }
+
+  .text-bg {
+    background-image: linear-gradient(to right, #8750f7 0%, #ffffff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-in-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 2s ease-in-out 1s;
+}
+
+body {
+  background-color: #8750f7;
+  font: 33px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  @apply px-4 py-8;
+  box-sizing: border-box;
+}
